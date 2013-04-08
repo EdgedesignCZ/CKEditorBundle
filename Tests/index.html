@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CKEditorBundle Test</title>
+    </head>
+    <body>
+        <h1>CKEditorBundle Test</h1>
+        <p>You should see CKEditor standard version (iniciated by jQuery) bellow:</p>
+        <form action="/" method="get">
+            <div class="wysiwyg">
+                <textarea></textarea>
+            </div>
+        </form>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+        <script type="text/javascript">
+            var CKEDITOR_BASEPATH = "../Resources/public/ckeditor/";
+        </script>
+        <script type="text/javascript" src="../Resources/public/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $('.wysiwyg textarea').removeAttr("required");
+                $('.wysiwyg textarea').each(function(){
+                    CKEDITOR.replace(this, {
+                        width: 700 ,
+                        height: 350 //,
+//                        entities: false,
+//                        forcePasteAsPlainText: true,
+//                        resize_enabled: false,
+//                        language : 'cs',
+//                        linkShowAdvancedTab: false,
+//                        linkShowTargetTab: true,
+//                        toolbarCanCollapse: false,
+//                        format_tags: 'p;h3',
+//                        toolbar: [
+//                            ['Undo', 'Redo', 'Format','Bold', 'Italic','-', 'BulletedList','NumberedList', 'Superscript','-','Link','Unlink','-', 'Maximize']
+//                        ],
+//                        removePlugins: 'elementspath, contextmenu, tabletools'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
