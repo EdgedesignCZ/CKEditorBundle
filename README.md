@@ -1,7 +1,7 @@
 CKEditor Bundle
 ==============
 
-Simple wrap of CKEditor WYSIWYG to Symfony bundle
+Simple wrap of CKEditor WYSIWYG to Symfony bundle.
 
 ## How to update bundle to new CKEditor version
 
