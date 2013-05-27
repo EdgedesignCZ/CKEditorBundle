@@ -19,10 +19,21 @@
         <script type="text/javascript" src="../Resources/public/ckeditor/ckeditor.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
+                CKEDITOR.cmslink = {
+                    label: 'CMS Odkazy',
+                    pages: [
+                        ['',''],
+                        ['name','/link1.html'],
+                        ['name2','/link2.html'],
+                        ['name3','/link3.html']
+                    ]
+                };
 
                 $('.wysiwyg textarea').removeAttr("required");
                 $('.wysiwyg textarea').each(function(){
+
                     CKEDITOR.replace(this, {
+
                         width: 700 ,
                         height: 350 //,
 //                        entities: false,
@@ -36,7 +47,8 @@
 //                        toolbar: [
 //                            ['Undo', 'Redo', 'Format','Bold', 'Italic','-', 'BulletedList','NumberedList', 'Superscript','-','Link','Unlink','-', 'Maximize']
 //                        ],
-//                        removePlugins: 'elementspath, contextmenu, tabletools'
+//                        removePlugins: 'elementspath, contextmenu, tabletools',
+                          , extraPlugins: 'cmslink'
                     });
                 });
             });
