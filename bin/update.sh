@@ -14,6 +14,7 @@ read VERSION
 
 mkdir temp
 cp -r Resources/public/ckeditor/plugins/cmslink temp/cmslink
+cp -r Resources/public/ckeditor/plugins/showblocks temp/showblocks
 
 # ===============================
 # Fetch git version
@@ -32,5 +33,6 @@ cd ../../..
 # ===============================
 
 cp -r temp/cmslink Resources/public/ckeditor/plugins/cmslink
+cp -r temp/showblocks Resources/public/ckeditor/plugins/showblocks
 # rm -fr temp
 
