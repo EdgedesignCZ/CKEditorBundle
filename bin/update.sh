@@ -20,7 +20,7 @@ cp -r Resources/public/ckeditor/plugins/showblocks temp/showblocks
 # Fetch git version
 # ===============================
 
-rm -fr Resources/public/ckeditor/*
+rm -fr Resources/public/ckeditor
 git clone git://github.com/ckeditor/ckeditor-releases.git Resources/public/ckeditor
 cd Resources/public/ckeditor
 git checkout $VERSION/standard
