@@ -28,6 +28,36 @@
                         ['name3','/link3.html']
                     ]
                 };
+                CKEDITOR.cmsfilelink = {
+                    label: 'CMS FILE Odkazy',
+                    files: [
+                        ['',''],
+                        ['name.pdf','/link1.html'],
+                        ['name2.exe','/link2.html'],
+                        ['name3.txt','/link3.html']
+                    ]
+                };
+                CKEDITOR.cmsimagelink = {
+                    label: 'CMS obrazky',
+                    images: [
+                        {
+                            'description' : 'Description 1',
+                            'title' : 'Title 1',
+                            'url' : '/Url1.jpg'
+                        },
+                        {
+                            'description' : 'Description 2',
+                            'title' : 'Title 2',
+                            'url' : '/Url2.jpg'
+                        },
+                        {
+                            'description' : 'Description 3',
+                            'title' : 'Title 3',
+                            'url' : '/Url3.jpg'
+                        }
+                    ]
+                };
+
 
                 $('.wysiwyg textarea').removeAttr("required");
                 $('.wysiwyg textarea').each(function(){
@@ -48,7 +78,7 @@
 //                            ['Undo', 'Redo', 'Format','Bold', 'Italic','-', 'BulletedList','NumberedList', 'Superscript','-','Link','Unlink','-', 'Maximize']
 //                        ],
 //                        removePlugins: 'elementspath, contextmenu, tabletools',
-                          , extraPlugins: 'cmslink,showblocks'
+                          , extraPlugins: 'cmslink,cmsfilelink,cmsimagelink,showblocks'
                     });
                 });
             });
