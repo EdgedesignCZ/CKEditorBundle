@@ -14,6 +14,8 @@ read VERSION
 
 mkdir temp
 cp -r Resources/public/ckeditor/plugins/cmslink temp/cmslink
+cp -r Resources/public/ckeditor/plugins/cmsfilelink temp/cmsfilelink
+cp -r Resources/public/ckeditor/plugins/cmsimagelink temp/cmsimagelink
 cp -r Resources/public/ckeditor/plugins/showblocks temp/showblocks
 
 # ===============================
@@ -33,6 +35,8 @@ cd ../../..
 # ===============================
 
 cp -r temp/cmslink Resources/public/ckeditor/plugins/cmslink
+cp -r temp/cmsimagelink Resources/public/ckeditor/plugins/cmsimagelink
+cp -r temp/cmsfilelink Resources/public/ckeditor/plugins/cmsfilelink
 cp -r temp/showblocks Resources/public/ckeditor/plugins/showblocks
 # rm -fr temp
 
