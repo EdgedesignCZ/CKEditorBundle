@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
     <head>
+        <meta charset="UTF-8" />
         <title>CKEditorBundle Test</title>
     </head>
     <body>
@@ -24,36 +25,36 @@
                     pages: [
                         ['',''],
                         ['name','/link1.html'],
-                        ['name2','/link2.html'],
-                        ['name3','/link3.html']
+                        ['Google','http://google.com'],
+                        ['Hash page','/link3.html#home']
                     ]
                 };
                 CKEDITOR.cmsfilelink = {
-                    label: 'CMS FILE Odkazy',
+                    label: 'CMS Soubory',
                     files: [
                         ['',''],
-                        ['name.pdf','/link1.html'],
-                        ['name2.exe','/link2.html'],
-                        ['name3.txt','/link3.html']
+                        ['name.pdf','/file/name.pdf'],
+                        ['name2.exe','http://dummyimage.com/150'],
+                        ['name3.txt','/some-file#text']
                     ]
                 };
                 CKEDITOR.cmsimagelink = {
-                    label: 'CMS obrazky',
+                    label: 'CMS Obrázky',
                     images: [
                         {
-                            'description' : 'Description 1',
-                            'title' : 'Title 1',
-                            'url' : '/Url1.jpg'
+                            'description' : 'Image Alt 1',
+                            'title' : 'Image Title 1',
+                            'url' : 'http://dummyimage.com/150'
                         },
                         {
-                            'description' : 'Description 2',
-                            'title' : 'Title 2',
-                            'url' : '/Url2.jpg'
+                            'description' : 'Image Alt 2',
+                            'title' : 'Image Title 2',
+                            'url' : '/missing-img.jpg'
                         },
                         {
-                            'description' : 'Description 3',
-                            'title' : 'Title 3',
-                            'url' : '/Url3.jpg'
+                            'description' : 'Image Alt 3',
+                            'title' : 'Image Title 3',
+                            'url' : 'http://dummyimage.com/151'
                         }
                     ]
                 };
@@ -78,6 +79,9 @@
 //                            ['Undo', 'Redo', 'Format','Bold', 'Italic','-', 'BulletedList','NumberedList', 'Superscript','-','Link','Unlink','-', 'Maximize']
 //                        ],
 //                        removePlugins: 'elementspath, contextmenu, tabletools',
+                          // , extraPlugins: 'cmslink'
+                          // , extraPlugins: 'cmsfilelink'
+                          // , extraPlugins: 'cmsimagelink'
                           , extraPlugins: 'cmslink,cmsfilelink,cmsimagelink,showblocks'
                     });
                 });
