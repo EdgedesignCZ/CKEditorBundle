@@ -34,10 +34,6 @@ CKEDITOR.on('dialogDefinition', function(ev){
                     var d = CKEDITOR.dialog.getCurrent();
                     d.setValueOf('info', 'txtUrl', images[this.getValue()].url);
                     d.setValueOf('info', 'txtAlt', images[this.getValue()].description);
-
-                    CKEDITOR.dialog.getCurrent().foreach(function(item){
-                        console.log(item);
-                    });
                 }
             },
             setup : function(data){
