@@ -3,40 +3,87 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here.
-	// For complete reference see:
-	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+;(function (CKEDITOR) {
+	'use strict';
 
-	// Added extra plugins
-	config.extraPlugins = 'cmslink,cmsfilelink,cmsimagelink,showblocks,edgcodesnippet,image2';
+	var basePath, extraPlugins, addExternal;
 
-	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		{ name: 'links' },
-		{ name: 'insert' },
-		{ name: 'forms' },
-		{ name: 'tools' },
-		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'others' },
-		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'styles' },
-		{ name: 'colors' },
-		{ name: 'about' },
-		{ name: 'CodeSnippet' }
+	basePath = CKEDITOR.basePath;
+	basePath = basePath.replace(/ckeditor\/$/,'');
+
+	// Define external plugins for loader
+	addExternal = [
+		{
+			name: 'edgcodesnippet',
+			path: basePath + '../plugins/edgcodesnippet/'
+		},
+		{
+			name: 'cmsfilelink',
+			path: basePath + '../plugins/cmsfilelink/'
+		},
+		{
+			name: 'cmsimagelink',
+			path: basePath + '../plugins/cmsimagelink/'
+		},
+		{
+			name: 'cmslink',
+			path: basePath + '../plugins/cmslink/'
+		},
+		{
+			name: 'showblocks',
+			path: basePath + '../plugins/showblocks/'
+		}
 	];
 
-	// Remove some buttons provided by the standard plugins, which are
-	// not needed in the Standard(s) toolbar.
-	config.removeButtons = 'Underline,Subscript,Superscript';
+	// Define extra plugins
+	extraPlugins = [
+		'cmslink',
+		'cmsfilelink',
+		'cmsimagelink',
+		'showblocks',
+		'edgcodesnippet',
+		'image2'
+	];
 
-	// Set the most common block elements.
-	config.format_tags = 'p;h1;h2;h3;pre';
+	// External plugin loader
+	for (var i = 0; i < addExternal.length; i++) {
+		CKEDITOR.plugins.addExternal(addExternal[i].name, addExternal[i].path);
+	};
 
-	// Simplify the dialog windows.
-	config.removeDialogTabs = 'image:advanced;link:advanced';
-};
+	CKEDITOR.editorConfig = function( config ) {
+		// Define changes to default configuration here.
+		// For complete reference see:
+		// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+		// Added extra plugins
+		config.extraPlugins = extraPlugins.join(',');
+
+		// The toolbar groups arrangement, optimized for two toolbar rows.
+		config.toolbarGroups = [
+			{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+			{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+			{ name: 'links' },
+			{ name: 'insert' },
+			{ name: 'forms' },
+			{ name: 'tools' },
+			{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+			{ name: 'others' },
+			'/',
+			{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+			{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+			{ name: 'styles' },
+			{ name: 'colors' },
+			{ name: 'about' }
+		];
+
+		// Remove some buttons provided by the standard plugins, which are
+		// not needed in the Standard(s) toolbar.
+		config.removeButtons = 'Underline,Subscript,Superscript';
+
+		// Set the most common block elements.
+		config.format_tags = 'p;h1;h2;h3;pre';
+
+		// Simplify the dialog windows.
+		config.removeDialogTabs = 'image:advanced;link:advanced';
+	};
+}(CKEDITOR));
