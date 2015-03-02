@@ -15,7 +15,8 @@
     "html",
     "richtext",
     "text",
-    "javascript"
+    "javascript",
+    "prettyprint"
   ],
   "license": "MIT",
   "ignore": [

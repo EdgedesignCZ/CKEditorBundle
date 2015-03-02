@@ -15,23 +15,23 @@
 	addExternal = [
 		{
 			name: 'edgcodesnippet',
-			path: basePath + '../plugins/edgcodesnippet/'
+			path: basePath + 'plugins/edgcodesnippet/'
 		},
 		{
 			name: 'cmsfilelink',
-			path: basePath + '../plugins/cmsfilelink/'
+			path: basePath + 'plugins/cmsfilelink/'
 		},
 		{
 			name: 'cmsimagelink',
-			path: basePath + '../plugins/cmsimagelink/'
+			path: basePath + 'plugins/cmsimagelink/'
 		},
 		{
 			name: 'cmslink',
-			path: basePath + '../plugins/cmslink/'
+			path: basePath + 'plugins/cmslink/'
 		},
 		{
 			name: 'showblocks',
-			path: basePath + '../plugins/showblocks/'
+			path: basePath + 'plugins/showblocks/'
 		}
 	];
 
