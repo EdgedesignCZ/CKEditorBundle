@@ -70,6 +70,7 @@
             if ( !editor._.edgcodesnippet.highlighter ) {
                 var hljsHighlighter = new CKEDITOR.plugins.edgcodesnippet.highlighter( {
                     languages: {
+                        nothing: '',
                         apache: 'Apache',
                         bash: 'Bash',
                         coffeescript: 'CoffeeScript',
