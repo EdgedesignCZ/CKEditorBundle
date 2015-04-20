@@ -25,7 +25,7 @@ cp -r Resources/public/ckeditor/plugins/showblocks temp/showblocks
 rm -fr Resources/public/ckeditor
 git clone git://github.com/ckeditor/ckeditor-releases.git Resources/public/ckeditor
 cd Resources/public/ckeditor
-git checkout $VERSION/standard
+git checkout standart/$VERSION
 rm -fr .git*
 rm -fr samples
 cd ../../..
